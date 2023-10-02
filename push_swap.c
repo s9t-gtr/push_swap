@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: string <string>                            +#+  +:+       +#+        */
+/*   By: kousuzuk <kousuzuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 16:40:03 by string            #+#    #+#             */
-/*   Updated: 2023/09/27 18:03:57 by string           ###   ########.fr       */
+/*   Updated: 2023/10/02 12:56:32 by kousuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,7 @@ int	main(int argc, char *argv[])
 	t_node	*a_stack;
 	t_node	*b_stack;
 
+	
 	n = inputcheck_argcount(argc, 0, argv);
 	a_stack = ft_nodenew(0, NIL);
 	storenode(argc, argv, &a_stack);

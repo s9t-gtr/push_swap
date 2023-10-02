@@ -6,7 +6,7 @@
 /*   By: kousuzuk <kousuzuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 16:39:52 by string            #+#    #+#             */
-/*   Updated: 2023/09/28 17:04:28 by kousuzuk         ###   ########.fr       */
+/*   Updated: 2023/10/02 13:01:30 by kousuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	inputcheck_argcount(int argc, int n, char *argv[])
 			if ((ft_strlen(argv[i]) == ft_strlen("2147483648")
 					&& ft_strncmp(argv[i], "2147483648", 10) == 0)
 				|| (ft_strlen(argv[i]) == ft_strlen("-2147483649")
-					&& ft_strncmp(argv[i], "-2147483649", 11) == 0))
+					&& ft_strncmp(argv[i], "-2147483649", 11) == 0) || ft_strlen(argv[i]) == 0)
 				error_print();
 			if (isnumsign_str(argv[i]))
 				n++;

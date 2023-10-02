@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: string <string>                            +#+  +:+       +#+         #
+#    By: kousuzuk <kousuzuk@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/18 16:39:58 by string            #+#    #+#              #
-#    Updated: 2023/09/27 18:06:47 by string           ###   ########.fr        #
+#    Updated: 2023/10/01 16:01:35 by kousuzuk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,17 +25,16 @@ SRC	=	push_swap.c \
 		utils.c
 OBJS = ${SRC:.c=.o}
 
-LIBFT = libft.a
+LIBFT = libftex/libft.a
 NAME = push_swap
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -g -Wall -Wextra -Werror
 
 %.c%.o:
 	${CC} ${CFLAGS} $< ${LIBFT} -o ${<:.c=.o}
 
 ${NAME}: ${OBJS}
-	make -C libft
-	cp libft/libft.a .
+	make -C libftex
 	${CC} ${CFLAG} -o ${NAME} ${OBJS} ${LIBFT}
 	
 #dummy-tergetの宣言
@@ -46,14 +45,12 @@ all: ${NAME} ;
 
 #コンパイル時に生成したオブジェクトファイルを削除
 clean:
-	make fclean -C libft
-	rm -rf ${LIBFT}
+	make fclean -C libftex
 	rm -rf ${OBJS}
 
 #clean+コンパイルした時に生成された実行ファイルと静的ライブラリを削除
 fclean: clean
-	make fclean -C libft
-	${RM} ${NAME} libft.a
+	make fclean -C libftex
 	rm -rf ${NAME}
 
 re: fclean all ;
