@@ -6,7 +6,7 @@
 #    By: kousuzuk <kousuzuk@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/18 16:39:58 by string            #+#    #+#              #
-#    Updated: 2023/10/01 16:01:35 by kousuzuk         ###   ########.fr        #
+#    Updated: 2023/10/08 10:47:56 by kousuzuk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ NAME = push_swap
 CC = cc
 CFLAGS = -g -Wall -Wextra -Werror
 
-%.c%.o:
+%.o: %.c
 	${CC} ${CFLAGS} $< ${LIBFT} -o ${<:.c=.o}
 
 ${NAME}: ${OBJS}
